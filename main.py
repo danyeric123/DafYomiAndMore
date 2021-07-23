@@ -39,17 +39,21 @@ mesekhtot = {
     "Temurah": 33,
     "Keratot": 27,
     "Meilah": 21,
+    "Middot": 3,
+    "Kinnim": 4,
     "Tamid": 8,
     "Niddah": 71
 }
-new_cycle, cur = date(2020,1,4), date.today()
-days_since = cur-new_cycle
+first_cycle, cur = date(1923,9,23), date.today()
+days_since = cur-first_cycle
 days_since = days_since.days
-# print(days_since)
+total_dapim = sum(mesekhtot.values())
+dapim_in_current_cycle = days_since%total_dapim+63
+# print(dapim_in_current_cycle)
 for mesekhta,pages in mesekhtot.items():
-    if days_since < pages:
-        print("Today's Daf is " + mesekhta,days_since+1)
+    if dapim_in_current_cycle < pages:
+        print("Today's Daf is " + mesekhta,dapim_in_current_cycle+1)
         break
-    days_since = days_since-pages
+    dapim_in_current_cycle = dapim_in_current_cycle-pages
 
 # print(sum(mesekhtot.values()))
