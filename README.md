@@ -5,3 +5,12 @@ This cycle is called Daf Yomi (the daily page). See more [here](https://en.wikip
 
 ### Description
 I made a short script that calculates what page and tractate we are on in the cycle.
+
+### Motivation
+I personally try to follow the cycle of Daf Yomi and wanted to practice my Python skills some more.
+
+# Getting Started
+Just run the code from the terminal
+```bash
+python main.py
+```
